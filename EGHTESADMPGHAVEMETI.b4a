@@ -1,0 +1,241 @@
+﻿Version=6.3
+NumberOfModules=4
+Module1=Starter
+Module2=mainpage
+Module3=video
+Module4=galery
+Build1=Default,Ir.Menhajapps.ShoyabAkbari.EghtesadeMoghavemati
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'AddReplacement(<uses-permission android:name="android.permission.INTERNET" />, <!-- <uses-permission android:name="android.permission.INTERNET" /> -->)~\n~'AddReplacement(<uses-permission android:name="android.permission.INTERNET"/>,)~\n~AddPermission(android.permission.INTERNET)~\n~'End of default text.~\n~'SetApplicationAttribute(android:theme, "@style/MyAppTheme")~\n~'~\n~'CreateResource(values, theme.xml,~\n~'<resources>~\n~'	<style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">~\n~'		<item name="colorPrimary">#009688</item>~\n~'		<item name="colorPrimaryDark">#00695c</item>~\n~'		<item name="colorAccent">#80cbc4</item>~\n~'		<item name="windowNoTitle">true</item>~\n~'		<item name="windowActionBar">true</item>~\n~'	</style>~\n~'</resources>~\n~')
+IconFile=
+NumberOfFiles=43
+File1=000[1].png
+File2=1.png
+File3=139601011546405010354784.jpg
+File4=15.jpg
+File5=635961304370693567.jpg
+File6=a1.mp4
+File7=db1.db
+File8=economic-strength.jpg
+File9=eghtimg.png
+File10=font1.ttf
+File11=font10.ttf
+File12=font2.ttf
+File13=font3.ttf
+File14=font4.ttf
+File15=font5.ttf
+File16=font6.ttf
+File17=font7.ttf
+File18=font8.ttf
+File19=font9.ttf
+File20=fontawesome-webfont.ttf
+File21=g1.png
+File22=g2.png
+File23=g3.png
+File24=g4.png
+File25=ginfo.png
+File26=img23030353.jpg
+File27=infographic-e-(51).jpg
+File28=khatinfo.png
+File29=Layout1.bal
+File30=main0.png
+File31=mainpagelayout.bal
+File32=photo-galery.png
+File33=poster-1.jpg
+File34=s.jpg
+File35=samamos-30.jpg
+File36=sp1.bal
+File37=splashhh.png
+File38=splashxx.png
+File39=texttttt.png
+File40=texttttt1.png
+File41=tolid_meli1.jpg
+File42=video.png
+File43=videov.bal
+NumberOfLibraries=6
+Library1=core
+Library2=reflection
+Library3=phone
+Library4=audio
+Library5=stringutils
+Library6=sql
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: اقتصاد مقاومتی
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: false
+#End Region
+
+
+
+'	#AdditionalRes: ..\resources
+'	#AdditionalRes: D:\learninig\barnamenevisi\android-programer\Android\aviny\0aa--Extention\abtahi\Solve problems\appcampat\AppCompatExample2\AppCompatExample2\b4a_appcompat, de.amberhome.objects.appcompat
+'	#AdditionalRes: D:\project\programing\android\dev\B4A-Quicklearn\SDK\extras\android\support\v7\appcompat\res, android.support.v7.appcompat
+'	#Extends: android.support.v7.app.ActionBarActivity
+'	#AdditionalRes: D:\learninig\barnamenevisi\android-programer\Android\aviny\0aa--Extention\abtahi\Solve problems\AppCompatDrawer\md-lib\res
+'	#AdditionalRes: D:\learninig\barnamenevisi\android-programer\Android\aviny\0aa--Extention\abtahi\Solve problems\AppCompatDrawer\md-app\res
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Dim timersplash As Timer
+	Dim TimerMoveText As Timer
+	Dim EnableTimerMoveText As Timer
+	Dim TimerMoveText2 As Timer
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Dim Label1 As Label
+	Dim ImageView2 As ImageView
+'	Dim RotateImgV2 As AnimationPlus
+	Dim ImageView3 As ImageView
+	Dim label2 As Label
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	Activity.LoadLayout("sp1")
+'	Activity.finish
+'	StartActivity("mainpage")
+	
+	timersplash.Initialize("timersplash",8000)
+	timersplash.Enabled=True
+	EnableTimerMoveText.Initialize("EnableTimerMoveText",2000)
+	EnableTimerMoveText.Enabled=True
+	TimerMoveText.Initialize("TimerMoveText",5)
+	TimerMoveText2.Initialize("TimerMoveText2",5)
+	
+	Label1.Text="کالای ایرانی می خرم"
+	Label1.Color=Colors.Blue
+	Label1.TextColor=Colors.Red
+	Label1.Gravity=Gravity.CENTER
+	Label1.TextSize=20
+	Label1.Typeface = Typeface.LoadFromAssets("font3.ttf")
+	Label1.Width=170dip
+	Label1.Height=30dip
+	Label1.Left=100%x
+	Label1.Top=5dip
+	ImageView2.Bitmap=LoadBitmap(File.DirAssets,"texttttt1.png")
+	ImageView2.Height=Label1.Height
+	ImageView2.Width=35dip
+	ImageView2.Left=Label1.Left+Label1.Width
+	ImageView2.Top=Label1.Top
+'	RotateImgV2.InitializeRotateCenter("",0,180,ImageView2)
+'	RotateImgV2.Duration=2000
+'	RotateImgV2.Start(ImageView2)
+	
+	label2.Initialize("label2")
+	Activity.AddView(label2,35dip,36dip,180dip,Label1.Height)
+	label2.Text="کالای ایرانی تولید می کنیم"
+	label2.Color=Colors.Blue
+	label2.TextColor=Colors.Red
+	label2.Gravity=Gravity.CENTER
+	label2.TextSize=16
+	label2.Typeface = Typeface.LoadFromAssets("font3.ttf")
+	label2.Left=0-label2.Width
+	
+	ImageView3.Initialize("ImageView3")
+	Activity.AddView(ImageView3,0dip,36dip,35dip,30dip)
+	ImageView3.Gravity=Gravity.FILL
+	ImageView3.Bitmap=LoadBitmap(File.DirAssets,"texttttt1.png")
+	ImageView3.Left=label2.Left-ImageView3.Width
+	Dim masterpic As Bitmap
+	masterpic.Initialize3(ImageView3.Bitmap)
+	rotatepicture(masterpic, 180)'Rotate the ImageView3 180 degree at every step
+    ImageView3.Bitmap=masterpic
+End Sub
+'دوثانیه بعد از شروع نمایش صفحه اسپلش تایمر حرکت متن را روشن می کند
+Sub EnableTimerMoveText_Tick 
+	TimerMoveText.Enabled=True
+	TimerMoveText2.Enabled=True
+	EnableTimerMoveText.Enabled=False
+End Sub
+'تایمر حرکت متن کالای ایرانی می خریم
+Sub TimerMoveText_Tick
+	Label1.left=Label1.left-4
+	ImageView2.Left=ImageView2.Left-4
+	If ImageView2.Left = 100%x-34dip Then
+		TimerMoveText.Enabled=False
+	End If
+End Sub
+'تایمر حرکت متن کالای ایرانی تولید می کنیم
+Sub TimerMoveText2_Tick
+	label2.Left=label2.Left + 4
+	ImageView3.Left=ImageView3.Left + 4
+	If label2.Left = 36dip Then
+		TimerMoveText2.Enabled=False
+	End If
+End Sub
+'تایمر اسپلش
+Sub timersplash_Tick
+	Activity.finish
+	timersplash.Enabled=False
+	StartActivity("mainpage")
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub rotatepicture(master As Bitmap, angle As Int)
+  Dim bb As Bitmap
+  Dim pwo As Int
+  Dim sqp As Int
+  Dim pho As Int
+  Dim recto As Rect
+  Dim c As Canvas
+ 
+  pwo = master.Width
+  pho = master.Height
+  'pwo=100
+  'pho=133
+  sqp = pwo 'for square imaqe
+ 
+  If pwo <> pho Then
+      'set longer side
+      sqp = pho
+      If pwo > pho Then sqp = pwo
+     
+      'first RESIZE to square
+      bb = CreateScaledBitmap (master, sqp, sqp, True)
+  End If
+ 
+  bb.InitializeMutable(sqp,sqp)
+  recto.Initialize(0, 0,sqp,sqp)
+
+  'ROTATE master into bb
+  c.Initialize2(bb)
+  c.DrawBitmapRotated(master, Null, recto, angle) 'Draw the new image
+  master.Initialize3(bb)
+ 
+  'RESIZE back inverse, if pic was not square
+  If pwo <> pho Then
+      master = CreateScaledBitmap (bb, pho, pwo, True)
+  End If
+ 
+End Sub
+
+Sub CreateScaledBitmap(Original As Bitmap, Width As Int, Height As Int, Filter As Boolean) As Bitmap
+  Dim rf As Reflector
+  Dim bm As Bitmap
+  bm = rf.RunStaticMethod("android.graphics.Bitmap", "createScaledBitmap", _
+  Array As Object(Original, Width, Height, Filter), _
+  Array As String("android.graphics.Bitmap", "java.lang.int", "java.lang.int", "java.lang.boolean"))
+  Return bm
+End Sub
+
